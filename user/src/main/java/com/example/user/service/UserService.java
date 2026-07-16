@@ -1,22 +1,20 @@
 package com.example.user.service;
 
-import com.example.user.dto.UserRequestDto;
-import com.example.user.dto.UserResponseDto;
+import com.example.user.entity.User;
 
 import java.util.List;
 
 public interface UserService {
-    UserResponseDto createUser(UserRequestDto request);
 
-    UserResponseDto getUserById(Long id);
+    List<User> getAllUsers();
 
-    List<UserResponseDto> getAllUsers();
+    User getUserById(Long id);
 
-    List<UserResponseDto> searchByFullName(String keyword);
+    User createUser(User user);
 
-    List<UserResponseDto> getInactiveUsers();
+    User updateUser(Long id, User user);
 
     void deleteUser(Long id);
 
-    UserResponseDto updateUser(Long id, UserRequestDto request);
+    User getUserByEmail(String email);
 }
